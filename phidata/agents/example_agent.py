@@ -8,7 +8,7 @@ agent = Agent(
     model=Groq(id="llama-3.3-70b-versatile")
 )
 
-prompt = "Book Writing"
+prompt = "Reactjs"
 
 agent.print_response(f'''
 Generate a JSON object for a course with the following structure:
