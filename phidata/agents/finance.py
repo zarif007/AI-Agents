@@ -4,9 +4,7 @@ from phi.tools.yfinance import YFinanceTools
 from phi.tools.duckduckgo import DuckDuckGo
 from dotenv import load_dotenv
 
-import os
 load_dotenv()
-openai_api_key = os.getenv("OPENAI_API_KEY")
 
 # Web search agent
 web_search_agent = Agent(
@@ -31,6 +29,7 @@ finance_agent = Agent(
 )
 
 multi_ai_agant = Agent(
+    model=Groq(id="llama-3.3-70b-versatile"),
     team=[web_search_agent, finance_agent],
     instructions=["Always show to sources", "Use tables to display the data"],
     show_tools_calls=True,
